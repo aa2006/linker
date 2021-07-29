@@ -68,6 +68,12 @@ def register():
 
         return redirect("/")
 
+@login_required
+@app.route("/logout")
+def logout():
+    session.clear()
+    return redirect("/")
+
 def errorhandler(e):
     """Handle error"""
     if not isinstance(e, HTTPException):
