@@ -6,4 +6,11 @@
 
 {% block body %}
     <h1>Hello World!</h1>
+
+    {% if not session["user_id"] %}
+    <a href="/login">Login</a>
+    <a href="/register">Sign Up</a>
+    {% else %}
+    <p>Welcome</p>
+    {% endif %}
 {% endblock %}
